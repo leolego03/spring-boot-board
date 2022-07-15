@@ -1,6 +1,11 @@
 ### Board application
 
 ```
+frontend: react
+version: ^18.2.0
+```
+
+```
 Build automation tool: Maven
 Spring boot version: 2.7.1
 ```
