@@ -27,6 +27,13 @@ public class ArticleController {
 			this.articleService = articleService;
 		}
 		
+		@GetMapping(path = "{articleId}")
+		public List<Article> getArticle(
+		        @PathVariable("articleId") Long articleId) {
+		   return articleService.getArticle(articleId);
+		}
+		
+		
 		@GetMapping
 		public List<Article> getArticles() {
 			return articleService.getArticles();

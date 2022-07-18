@@ -2,6 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router,
+          Routes,
+          Route} from 'react-router-dom';
+import List from './components/List'
+import View from './components/View'
 
 function App() {
   const [articles, setArticles] = useState([])
@@ -13,34 +18,25 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Router>
+      <div className="App">
 
-        {articles.map(article => {
-          return (
-            <ul key={article.id}>
-              <li>{article.name}</li>
-              <li>{article.subject}</li>
-              <li>{article.content}</li>
-              <li>{article.date}</li>
-            </ul>
-          );
-        })}
+        <div className="App-list">
 
-      </header>
-    </div>
+          <Routes>
+            <Route exact path='/' element={
+              <>
+                <img src={logo} className="App-logo" alt="logo" />
+                <List articles = {articles} />
+              </>
+            }></Route>
+            <Route exact path='/view' element={< View />}></Route>
+          </Routes>
+
+        </div>
+
+      </div>
+    </Router>
   );
 }
 
