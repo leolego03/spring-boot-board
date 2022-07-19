@@ -26,6 +26,15 @@
 
 .App-list td { padding: 10px; }
 
+.subject a {
+  color: #aeaeae;
+  text-decoration: none;
+}
+
+.subject a:hover {
+  color: white;
+}
+
 .App-view {
   background-color: #282c34;
   min-height: 100vh;
@@ -49,11 +58,9 @@
 .App-view a {
   display: inline-block;
   margin: 20px;
-}
-
-/* .App-link {
   color: #61dafb;
-} */
+  text-decoration: none;
+}
 
 @keyframes App-logo-spin {
   from {

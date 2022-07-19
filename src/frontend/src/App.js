@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router,
           Routes,
-          Route} from 'react-router-dom';
+          Route } from 'react-router-dom';
 import List from './components/List'
 import View from './components/View'
 

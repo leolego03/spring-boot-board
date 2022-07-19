@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const List = ({ articles }) => {
   return (
     <table>
@@ -5,8 +7,8 @@ const List = ({ articles }) => {
         {articles.map(article => {
           return (
             <tr key={article.id}>
-              <td>
-                <a href={`/view`}>{article.subject}</a>
+              <td className='subject'>
+                <Link to = '/view' state={{ data: article }}>{article.subject}</Link>
               </td>
               <td>{article.name}</td>
               <td>

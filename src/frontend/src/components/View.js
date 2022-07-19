@@ -1,17 +1,23 @@
+import { Link,
+          useLocation } from 'react-router-dom'
+
 const View = () => {
+  const location = useLocation()
+  const data = location.state.data
+
   return (
     <div className="App-view">
       <div>
-        <p>subject</p>
-        <span>name</span>
-        <span>date</span>
+        <p>{data.subject}</p>
+        <span>{data.name}</span>
+        <span>{data.date.substring(5)}</span>
       </div>
 
       <div>
-        content
+        {data.content}
       </div>
 
-      <a href='/'>Go Back</a>
+      <Link to='/'>Go Back</Link>
     </div>
   )
 }
