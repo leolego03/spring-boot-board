@@ -8,7 +8,7 @@ const List = ({ articles }) => {
           return (
             <tr key={article.id}>
               <td className='subject'>
-                <Link to = '/view' state={{ data: article }}>{article.subject}</Link>
+                <Link to = {`/view/${article.id}`}>{article.subject}</Link>
               </td>
               <td>{article.name}</td>
               <td>

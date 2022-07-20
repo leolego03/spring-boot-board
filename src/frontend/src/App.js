@@ -5,8 +5,8 @@ import axios from 'axios';
 import { BrowserRouter as Router,
           Routes,
           Route } from 'react-router-dom';
-import List from './components/List'
-import View from './components/View'
+import List from './components/List';
+import View from './components/View';
 
 function App() {
   const [articles, setArticles] = useState([])
@@ -30,7 +30,7 @@ function App() {
                 <List articles = {articles} />
               </>
             }></Route>
-            <Route exact path='/view' element={< View />}></Route>
+            <Route exact path='/view/:id' element={< View />}></Route>
           </Routes>
 
         </div>

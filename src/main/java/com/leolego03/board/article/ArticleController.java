@@ -28,7 +28,7 @@ public class ArticleController {
 		}
 		
 		@GetMapping(path = "{articleId}")
-		public List<Article> getArticle(
+		public Article getArticle(
 		        @PathVariable("articleId") Long articleId) {
 		   return articleService.getArticle(articleId);
 		}

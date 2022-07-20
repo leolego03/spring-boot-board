@@ -5,10 +5,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 @Service
 public class ArticleService {
@@ -20,12 +18,10 @@ public class ArticleService {
 		this.articleRepository = articleRepository;
 	}
 	
-    public List<Article> getArticle(Long articleId) {
-        List<Article> articleLst = new ArrayList<>();
-        Optional<Article> articleOpt = articleRepository.findById(articleId);
-        if(articleOpt.isPresent())
-            articleLst.add(articleOpt.get());
-        return articleLst;
+    public Article getArticle(Long articleId) {
+        return articleRepository.findById(articleId)
+                .orElseThrow(() -> new IllegalStateException(
+                                "article with id " + articleId + " does not exists"));
     }
 	
 	public List<Article> getArticles() {

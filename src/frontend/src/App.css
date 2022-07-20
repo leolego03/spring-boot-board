@@ -44,16 +44,22 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-align: left;
 }
 
-.App-view p {
+.view-head { width: 100%; }
+.view-head p {
   display: inline-block;
+  margin: 20px;
+}
+.view-head span {
+  display: inline-block;
+  font-size: calc(6px + 2vmin);
+  margin: 20px;
+  color: #aeaeae;
 }
 
-.App-view span {
-  display: inline-block;
-  margin-left: 40px;
-}
+.view-content { margin: 20px; }
 
 .App-view a {
   display: inline-block;
