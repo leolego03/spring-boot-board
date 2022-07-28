@@ -53,6 +53,7 @@
                 <version>1.12.1</version>
                 <configuration>
                     <workingDirectory>src/frontend</workingDirectory>
+                    <installDirectory>target</installDirectory>
                 </configuration>
                 <executions>
                     <execution>
